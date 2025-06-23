@@ -9,13 +9,19 @@ import Tabs from './Tabs';
 import argonTheme from '../constants/Theme';
 
 const { height, width } = Dimensions.get('window');
-const iPhoneX = () => Platform.OS === 'ios' && (height === 812 || width === 812 || height === 896 || width === 896);
+const iPhoneX = () =>
+  Platform.OS === 'ios' && (height === 812 || width === 812 || height === 896 || width === 896);
 
 const BellButton = ({ isWhite, style }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Pro')}>
-      <Icon family="ArgonExtra" size={16} name="bell" color={argonTheme.COLORS[isWhite ? 'WHITE' : 'ICON']} />
+      <Icon
+        family="ArgonExtra"
+        size={16}
+        name="bell"
+        color={argonTheme.COLORS[isWhite ? 'WHITE' : 'ICON']}
+      />
       <Block middle style={styles.notify} />
     </TouchableOpacity>
   );
@@ -24,8 +30,13 @@ const BellButton = ({ isWhite, style }) => {
 const BasketButton = ({ isWhite, style }) => {
   const navigation = useNavigation();
   return (
-    <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Pro')}>
-      <Icon family="ArgonExtra" size={16} name="basket" color={argonTheme.COLORS[isWhite ? 'WHITE' : 'ICON']} />
+    <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Cart')}>
+      <Icon
+        family="ArgonExtra"
+        size={16}
+        name="basket"
+        color={argonTheme.COLORS[isWhite ? 'WHITE' : 'ICON']}
+      />
     </TouchableOpacity>
   );
 };
@@ -34,7 +45,12 @@ const SearchButton = ({ isWhite, style }) => {
   const navigation = useNavigation();
   return (
     <TouchableOpacity style={[styles.button, style]} onPress={() => navigation.navigate('Pro')}>
-      <Icon size={16} family="Galio" name="search-zoom-in" color={theme.COLORS[isWhite ? 'WHITE' : 'ICON']} />
+      <Icon
+        size={16}
+        family="Galio"
+        name="search-zoom-in"
+        color={theme.COLORS[isWhite ? 'WHITE' : 'ICON']}
+      />
     </TouchableOpacity>
   );
 };
@@ -104,13 +120,13 @@ const Header = ({
 
   const renderOptions = () => (
     <Block row style={styles.options}>
-      <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Pro')}>
+      <Button shadowless style={[styles.tab, styles.divider]} onPress={() => navigation.navigate('Beauty')}>
         <Block row middle>
           <Icon name="diamond" family="ArgonExtra" style={{ paddingRight: 8 }} color={argonTheme.COLORS.ICON} />
           <Text size={16} style={styles.tabTitle}>{optionLeft || 'Beauty'}</Text>
         </Block>
       </Button>
-      <Button shadowless style={styles.tab} onPress={() => navigation.navigate('Pro')}>
+      <Button shadowless style={styles.tab} onPress={() => navigation.navigate('Fashion')}>
         <Block row middle>
           <Icon size={16} name="bag-17" family="ArgonExtra" style={{ paddingRight: 8 }} color={argonTheme.COLORS.ICON} />
           <Text size={16} style={styles.tabTitle}>{optionRight || 'Fashion'}</Text>
