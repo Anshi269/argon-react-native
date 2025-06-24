@@ -57,7 +57,7 @@ export default function ProductScreen({ navigation }) {
           <View style={styles.sellerSection}>
             <View style={styles.sellerInfo}>
               <Image
-                source={{ uri: 'https://images.unsplash.com/photo-1494790108755-2616b612b47c?w=40&h=40&fit=crop&crop=face' }}
+                source={require('../assets/profile-image.png')} // Update with your actual filename
                 style={styles.sellerAvatar}
               />
               <View>
