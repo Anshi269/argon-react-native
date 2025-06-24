@@ -17,6 +17,11 @@ import SearchDefault from './screens/SearchDefault';
 import SearchActive from './screens/SearchActive';
 import Profile from "./screens/Profile";
 import Settings from './screens/Settings';
+import NotificationSettings from './screens/NotificationSettings';
+import UserAgreement from './screens/UserAgreement';
+import Notifications from './screens/Notifications';
+import Register from './screens/Register'; // already imported
+
 
 const Drawer = createDrawerNavigator();
 
@@ -27,7 +32,7 @@ function App() {
         <Drawer.Screen name="Home" component={Home} />
         <Drawer.Screen name="Elements" component={Elements} />
         <Drawer.Screen name="Articles" component={Articles} />
-        <Drawer.Screen name="Register" component={Onboarding} />
+        <Drawer.Screen name="Onboarding" component={Onboarding} />
         <Drawer.Screen name="Categories" component={Categories} />
         <Drawer.Screen name="Carousel" component={CarouselScreen} />
         <Drawer.Screen name="Product" component={ProductScreen} />
@@ -37,6 +42,10 @@ function App() {
         <Drawer.Screen name="SearchActive" component={SearchActive} />
         <Drawer.Screen name="Profile" component={Profile} />
         <Drawer.Screen name="Settings" component={Settings} />
+        <Drawer.Screen name="NotificationSettings" component={NotificationSettings} />
+        <Drawer.Screen name="UserAgreement" component={UserAgreement} options={{ drawerLabel: () => null, title: null, drawerIcon: () => null }} />
+        <Drawer.Screen name="Notifications" component={Notifications} options={{ drawerLabel: () => null }} />
+        <Drawer.Screen name="Register" component={Register} />
 
       </Drawer.Navigator>
     </NavigationContainer>

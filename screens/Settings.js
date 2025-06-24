@@ -4,16 +4,12 @@ import {
   Text,
   StyleSheet,
   TouchableOpacity,
-  Switch,
   ScrollView,
-  StatusBar
+  StatusBar,
 } from 'react-native';
 import { Icon } from 'galio-framework';
 
 const Settings = ({ navigation }) => {
-  const [faceIdEnabled, setFaceIdEnabled] = React.useState(true);
-  const [autoLockEnabled, setAutoLockEnabled] = React.useState(false);
-
   return (
     <View style={styles.container}>
       <StatusBar barStyle="dark-content" backgroundColor="#fff" />
@@ -40,69 +36,75 @@ const Settings = ({ navigation }) => {
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Recommended Settings</Text>
           <Text style={styles.sectionDescription}>These are the most important settings</Text>
-          
-          <View style={styles.settingsCard}>
-            <View style={styles.settingRow}>
-              <Text style={styles.settingLabel}>Use FaceID to sign in</Text>
-              <Switch
-                value={faceIdEnabled}
-                onValueChange={setFaceIdEnabled}
-                trackColor={{ false: '#E5E7EB', true: '#3B82F6' }}
-                thumbColor={faceIdEnabled ? '#FFFFFF' : '#FFFFFF'}
-              />
-            </View>
-            <View style={styles.settingRow}>
-              <Text style={styles.settingLabel}>Auto-Lock security</Text>
-              <Switch
-                value={autoLockEnabled}
-                onValueChange={setAutoLockEnabled}
-                trackColor={{ false: '#E5E7EB', true: '#3B82F6' }}
-                thumbColor={autoLockEnabled ? '#FFFFFF' : '#FFFFFF'}
-              />
-            </View>
-            <TouchableOpacity style={[styles.settingRow, styles.lastRow]}>
-              <Text style={styles.settingLabel}>Clothing</Text>
-              <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
-            </TouchableOpacity>
-          </View>
+
+          <TouchableOpacity style={styles.settingRow}>
+            <Text style={styles.settingLabel}>Use FaceID to sign in</Text>
+            <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={styles.settingRow}>
+            <Text style={styles.settingLabel}>Auto-Lock security</Text>
+            <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={[styles.settingRow, styles.lastRow]}>
+            <Text style={styles.settingLabel}>Clothing</Text>
+            <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+          </TouchableOpacity>
         </View>
 
         {/* Payment Settings */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Payment Settings</Text>
           <Text style={styles.sectionDescription}>These are also important settings</Text>
-          
-          <View style={styles.settingsCard}>
-            <TouchableOpacity style={styles.settingRow}>
-              <Text style={styles.settingLabel}>Manage Payment Options</Text>
-              <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.settingRow, styles.lastRow]}>
-              <Text style={styles.settingLabel}>Manage Gift Cards</Text>
-              <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
-            </TouchableOpacity>
-          </View>
+
+          <TouchableOpacity style={styles.settingRow}>
+            <Text style={styles.settingLabel}>Manage Payment Options</Text>
+            <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={[styles.settingRow, styles.lastRow]}>
+            <Text style={styles.settingLabel}>Manage Gift Cards</Text>
+            <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+          </TouchableOpacity>
         </View>
 
         {/* Privacy Settings */}
         <View style={styles.section}>
           <Text style={styles.sectionTitle}>Privacy Settings</Text>
           <Text style={styles.sectionDescription}>Third most important settings</Text>
-          
-          <View style={styles.settingsCard}>
-            <TouchableOpacity style={styles.settingRow}>
-              <Text style={styles.settingLabel}>User Agreement</Text>
-              <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.settingRow}>
-              <Text style={styles.settingLabel}>Privacy</Text>
-              <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
-            </TouchableOpacity>
-            <TouchableOpacity style={[styles.settingRow, styles.lastRow]}>
-              <Text style={styles.settingLabel}>About</Text>
-              <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
-            </TouchableOpacity>
-          </View>
+
+          <TouchableOpacity
+  style={styles.settingRow}
+  onPress={() => navigation.navigate('UserAgreement')}
+>
+  <Text style={styles.settingLabel}>User Agreement</Text>
+  <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+</TouchableOpacity>
+
+          <TouchableOpacity style={styles.settingRow}>
+            <Text style={styles.settingLabel}>Privacy</Text>
+            <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+          </TouchableOpacity>
+
+          <TouchableOpacity style={[styles.settingRow, styles.lastRow]}>
+            <Text style={styles.settingLabel}>About</Text>
+            <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+          </TouchableOpacity>
+        </View>
+
+        {/* Notification Settings */}
+        <View style={styles.section}>
+          <Text style={styles.sectionTitle}>Notification Settings</Text>
+          <Text style={styles.sectionDescription}>Control your notification preferences</Text>
+
+          <TouchableOpacity
+            style={[styles.settingRow, styles.lastRow]}
+            onPress={() => navigation.navigate('NotificationSettings')}
+          >
+            <Text style={styles.settingLabel}>Manage Notifications</Text>
+            <Icon name="chevron-right" family="Feather" size={20} color="#111827" />
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
@@ -131,6 +133,8 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#111827',
     textAlign: 'center',
+    flex: 1,
+    marginLeft: -22,
   },
   headerIcons: {
     flexDirection: 'row',
@@ -169,19 +173,6 @@ const styles = StyleSheet.create({
     color: '#6B7280',
     textAlign: 'center',
     marginBottom: 16,
-  },
-  settingsCard: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 12,
-    paddingHorizontal: 16,
-    shadowColor: '#000',
-    shadowOffset: {
-      width: 0,
-      height: 1,
-    },
-    shadowOpacity: 0.05,
-    shadowRadius: 2,
-    elevation: 1,
   },
   settingRow: {
     flexDirection: 'row',

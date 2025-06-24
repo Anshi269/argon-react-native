@@ -23,6 +23,7 @@ import Beauty from "../screens/Beauty";
 import Fashion from "../screens/Fashion";
 import ShoppingCart from '../screens/ShoppingCart';
 
+
 // Drawer
 import CustomDrawerContent from "./Menu";
 

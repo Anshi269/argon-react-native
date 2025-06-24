@@ -14,6 +14,7 @@ export default function DrawerContent(props) {
     { label: 'Product', icon: 'shopping-cart', route: 'Product' },
     { label: 'Chat', icon: 'message-circle', route: 'Chat' },
     { label: 'Register', icon: 'user-plus', route: 'Register' },
+    { label: 'Register', icon: 'user-plus', route: 'Register' },
   ];
 
   return (

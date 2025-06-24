@@ -39,7 +39,9 @@ const Categories = ({ navigation }) => {
       <Block row space="between" style={styles.header}>
         <Text bold size={20}>Categories</Text>
         <Block row>
-          <Icon name="bell" family="Feather" size={20} style={{ marginRight: 20 }} />
+          <TouchableOpacity onPress={() => navigation.navigate('Notifications')}>
+            <Icon name="bell" family="Feather" size={22} color="#111827" />
+          </TouchableOpacity>
           <TouchableOpacity onPress={handleCartPress}>
             <Icon name="shopping-cart" family="Feather" size={20} />
           </TouchableOpacity>
