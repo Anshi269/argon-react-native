@@ -58,7 +58,7 @@ const OnboardingScreen = ({ navigation }) => {
         {/* CTA Button */}
         <TouchableOpacity
           style={styles.button}
-          onPress={() => navigation.navigate('App')}
+          onPress={() => navigation.navigate('Home')}
         >
           <Text style={styles.buttonText}>GET PRO VERSION</Text>
         </TouchableOpacity>

@@ -28,26 +28,29 @@ const Drawer = createDrawerNavigator();
 function App() {
   return (
     <NavigationContainer>
-      <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
-        <Drawer.Screen name="Home" component={Home} />
-        <Drawer.Screen name="Elements" component={Elements} />
-        <Drawer.Screen name="Articles" component={Articles} />
-        <Drawer.Screen name="Onboarding" component={Onboarding} />
-        <Drawer.Screen name="Categories" component={Categories} />
-        <Drawer.Screen name="Carousel" component={CarouselScreen} />
-        <Drawer.Screen name="Product" component={ProductScreen} />
-        <Drawer.Screen name="Chat" component={ChatScreen} />
-        <Drawer.Screen name="Cart" component={ShoppingCart} />
-        <Drawer.Screen name="SearchDefault" component={SearchDefault} />
-        <Drawer.Screen name="SearchActive" component={SearchActive} />
-        <Drawer.Screen name="Profile" component={Profile} />
-        <Drawer.Screen name="Settings" component={Settings} />
-        <Drawer.Screen name="NotificationSettings" component={NotificationSettings} />
-        <Drawer.Screen name="UserAgreement" component={UserAgreement} options={{ drawerLabel: () => null, title: null, drawerIcon: () => null }} />
-        <Drawer.Screen name="Notifications" component={Notifications} options={{ drawerLabel: () => null }} />
-        <Drawer.Screen name="Register" component={Register} />
+      <Drawer.Navigator
+  initialRouteName="Onboarding"
+  drawerContent={(props) => <DrawerContent {...props} />}
+>
+  <Drawer.Screen name="Home" component={Home} />
+  <Drawer.Screen name="Elements" component={Elements} />
+  <Drawer.Screen name="Articles" component={Articles} />
+  <Drawer.Screen name="Onboarding" component={Onboarding} />
+  <Drawer.Screen name="Categories" component={Categories} />
+  <Drawer.Screen name="Carousel" component={CarouselScreen} />
+  <Drawer.Screen name="Product" component={ProductScreen} />
+  <Drawer.Screen name="Chat" component={ChatScreen} />
+  <Drawer.Screen name="Cart" component={ShoppingCart} />
+  <Drawer.Screen name="SearchDefault" component={SearchDefault} />
+  <Drawer.Screen name="SearchActive" component={SearchActive} />
+  <Drawer.Screen name="Profile" component={Profile} />
+  <Drawer.Screen name="Settings" component={Settings} />
+  <Drawer.Screen name="NotificationSettings" component={NotificationSettings} />
+  <Drawer.Screen name="UserAgreement" component={UserAgreement} options={{ drawerLabel: () => null, title: null, drawerIcon: () => null }} />
+  <Drawer.Screen name="Notifications" component={Notifications} options={{ drawerLabel: () => null }} />
+  <Drawer.Screen name="Register" component={Register} />
+</Drawer.Navigator>
 
-      </Drawer.Navigator>
     </NavigationContainer>
   );
 }
